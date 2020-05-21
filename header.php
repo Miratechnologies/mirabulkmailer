@@ -2,7 +2,7 @@
 	
 	<a class="navbar-brand active ml-5 h1 mt-1" href="index.php">
 		<!-- <span class="fa fa-envelope-o"></span>  -->
-		<img src="assets/imgs/miralogo.png" alt="">
+		<img src="assets/imgs/miralogo.png" alt="Mira Technologies Logo" width="50">
 		Mira Bulk Mailing & SMS
 	</a>
 

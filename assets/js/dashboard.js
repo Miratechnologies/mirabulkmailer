@@ -8,8 +8,8 @@ async function loadEmailChart(labels,values) {
          datasets: [{
             label: 'Number of Email Sent',
             fill: false,
-            backgroundColor: window.chartColors.obejor,
-            borderColor: window.chartColors.obejor,
+            backgroundColor: window.chartColors.miratech,
+            borderColor: window.chartColors.miratech,
             data: values,
          }]
       },
@@ -17,7 +17,7 @@ async function loadEmailChart(labels,values) {
          responsive: true,
          title: {
             display: true,
-            text: 'Obejor Email Campaign'
+            text: 'Mira Technologies Email Campaign'
          },
          scales: {
             xAxes: [{
@@ -65,7 +65,7 @@ async function loadSMSChart(labels,values) {
          responsive: true,
          title: {
             display: true,
-            text: 'Obejor SMS Campaign'
+            text: 'Mira Technologies SMS Campaign'
          },
          scales: {
             xAxes: [{

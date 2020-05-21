@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/obejorgroupcom/public_html/
+    - export DEPLOYPATH=/home/ici/public_html/bulkmailer/
     - /bin/cp -u -r * $DEPLOYPATH
     # - /bin/cp .htaccess $DEPLOYPATH

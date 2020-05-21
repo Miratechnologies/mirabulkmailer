@@ -8,7 +8,7 @@ window.chartColors = {
 	blue: 'rgb(54, 162, 235)',
 	purple: 'rgb(153, 102, 255)',
 	grey: 'rgb(201, 203, 207)',
-	obejor: 'rgb(235, 68, 8)'
+	miratech: 'rgb(57, 41, 148)'
 };
 
 (function(global) {

@@ -133,7 +133,7 @@ function get_client_ip() {
 <body class="bg-white" onload="hidePassword();">
 
    <nav class="navbar navbar-expand-md navbar-dark obejor-bg-dark sticky-top">
-		<a class="navbar-brand active ml-3 h1 mt-1" href="#"> <img src="assets/imgs/miralogo.png" alt="" width="50"></span> Mira Bulk Mailing & SMS</a>
+		<a class="navbar-brand active ml-3 h1 mt-1" href="#"> <img src="assets/imgs/miralogo.png" alt="Mira Technologies Logo" width="50"></span> Mira Bulk Mailing & SMS</a>
 		<!-- <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarText"
 			aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
