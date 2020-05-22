@@ -5,7 +5,7 @@ include_once 'scripts/auth.php';
 include_once 'scripts/restrict_admin.php';
 
 include 'scripts/dbmodel.php';
-$model = new DBModel();
+// $model = new DBModel();
 // session_start();
 $_SESSION['USER.ACTIVITY'][] = "settings - " . date("d/m/Y h:i a");
 include 'scripts/log.php';
