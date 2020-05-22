@@ -51,7 +51,7 @@ if (isset($_GET['action']) && $_GET['action'] == "send") {
 				$mail->Port = '587';				//Sets the default SMTP server port
 				$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
 				$mail->Username = 'bulkmailer@miratechnologies.com.ng';					//Sets SMTP username
-				$mail->Password = 'lFu!2J?LTcrv';					//Sets SMTP password
+				$mail->Password = 'ChuKwuKa!2020';					//Sets SMTP password
 				// Testing REad Receipt
 				// $return = "ebukaodini@gmail.com";
 				// $mail->AddCustomHeader( "X-Confirm-Reading-To: $return" );
