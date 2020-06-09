@@ -61,7 +61,7 @@ function readExcelData($excelFile){
       // verify that email exist
       
       // an optional sender
-      $sender = 'obejor@obejorgroup.com.ng';
+      $sender = 'bulkmailer@miratechnologies.com.ng';
       // instantiate the class
       $SMTP_Validator = new SMTP_validateEmail();
       // turn on debugging if you want to view the SMTP transaction
@@ -77,7 +77,7 @@ function readExcelData($excelFile){
             $add = $model->addAudience($firstname, $lastname, $email, $telephone, $classification, "SUBSCRIBED");
             // and send confirmation mail
             if ($add == true) {
-               mail($email, 'Thanks', 'Thank you for subscribing to Obejor Newsletter.', 'From:'.$sender."\r\n"); // send email
+               mail($email, 'Thanks', 'Thank you for subscribing to Mira Technologies Newsletter.', 'From:'.$sender."\r\n"); // send email
             }
          }
          

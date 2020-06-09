@@ -31,7 +31,7 @@ if(isset($_POST['send_email']))
 		$mail->Host = 'mail.obejorgroup.com.ng';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
 		$mail->Port = '25';								//Sets the default SMTP server port
 		$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
-		$mail->Username = 'obejor@obejorgroup.com.ng';					//Sets SMTP username
+		$mail->Username = 'bulkmailer@miratechnologies.com.ng';					//Sets SMTP username
 		$mail->Password = 'z2ByQAHn]LY$';					//Sets SMTP password
 		// Testing REad Receipt
 		$return = "ebukaodini@gmail.com";
@@ -39,7 +39,7 @@ if(isset($_POST['send_email']))
 		$mail->AddCustomHeader( "Return-Receipt-To: $return" );
 		$mail->AddCustomHeader( "Disposition-Notification-To: $return" );
 		// $mail->SMTPSecure = '';							//Sets connection prefix. Options are "", "ssl" or "tls"
-		$mail->From = 'obejor@obejorgroup.com.ng';			//Sets the From email address for the message
+		$mail->From = 'bulkmailer@miratechnologies.com.ng';			//Sets the From email address for the message
 		$mail->FromName = $sender;					//Sets the From name of the message
 		$mail->AddAddress($recipient["email"], $recipient["name"]);	//Adds a "To" address
 		$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
