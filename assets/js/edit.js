@@ -1684,10 +1684,13 @@ function chooseImage(name, uri) {
    let column = selectedBlock.currentTarget.children[0].children[0].children[imageToCol];
    let cntt = column.children[0].children[imgToCnt];
 
-   alert(src)
+   // alert(src)
 
-   cntt.children[0].children[0].src = src;
-   cntt.children[0].children[0].children[0].src = src;
+   if (cntt.className == '_img') {
+      cntt.children[0].children[0].src = src;
+   } else if (cntt.className == '_imglink') {
+      cntt.children[0].children[0].children[0].src = src;
+   }
    
    body = $("#"+display.displayed).html();
    content.set(body);

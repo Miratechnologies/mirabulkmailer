@@ -1686,8 +1686,11 @@ function chooseImage(name, uri) {
 
    // alert(src)
 
-   cntt.children[0].children[0].src = src;
-   cntt.children[0].children[0].children[0].src = src;
+   if (cntt.className == '_img') {
+      cntt.children[0].children[0].src = src;
+   } else if (cntt.className == '_imglink') {
+      cntt.children[0].children[0].children[0].src = src;
+   }
    
    body = $("#"+display.displayed).html();
    content.set(body);
