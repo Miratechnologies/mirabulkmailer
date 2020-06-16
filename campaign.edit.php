@@ -51,9 +51,8 @@ if ($_GET != []) {
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Edit Email Campaign | BulkMailing</title>
-   <link rel="shortcut icon" href="assets/imgs/miraicon.png" type="image/x-icon">
 
-   <!-- Jquery -->
+   <link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/x-icon"><!-- Jquery -->
 	<script src="assets/js/jquery.min.js"></script>
 	<!-- Popper -->
 	<script src="assets/js/popper.min.js"></script>
@@ -185,6 +184,11 @@ if ($_GET != []) {
                </div>
                <div class="col-3 mx-auto h-auto">
                   <button class="btn btn-md border text-secondary w-100" data-type="Spacer" draggable="true" ondragstart="contentDrag(event)"> <span class="fa fa-plus"></span><br>Spacer</button>
+               </div>
+            </div>
+            <div class="row my-2 no-gutters text-center w-100">
+               <div class="col-11 mx-auto h-auto">
+                  <button class="btn btn-md border text-secondary w-100" data-type="SocialIcons" draggable="true" ondragstart="contentDrag(event)"> <span class="fa fa-plus"></span><br>Social Media Links</button>
                </div>
             </div>
          </div>

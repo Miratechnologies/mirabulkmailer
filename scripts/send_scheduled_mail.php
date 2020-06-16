@@ -106,54 +106,53 @@ class scheduler
 		return 1;
 
 		$output = ''; $noMailSent = 0;
-		foreach($recipients as $recipient)
-		{
-			$mail = new PHPMailer;
-			$mail->IsSMTP();								//Sets Mailer to send message using SMTP
-			$mail->Host = 'mail.miratechnologies.com.ng';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
-			$mail->Port = '587';								//Sets the default SMTP server port
-			$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
-			$mail->Username = 'bulkmailer@miratechnologies.com.ng';					//Sets SMTP username
-			$mail->Password = 'ChuKwuKa!2020';					//Sets SMTP password
-			// Testing REad Receipt
-			// $return = "ebukaodini@gmail.com";
-			// $mail->AddCustomHeader( "X-Confirm-Reading-To: $return" );
-			// $mail->AddCustomHeader( "Return-Receipt-To: $return" );
-			// $mail->AddCustomHeader( "Disposition-Notification-To: $return" );
-			// $mail->SMTPSecure = '';							//Sets connection prefix. Options are "", "ssl" or "tls"
-			$mail->From = 'bulkmailer@miratechnologies.com.ng';			//Sets the From email address for the message
-			$mail->FromName = $sender;					//Sets the From name of the message
-			$mail->AddAddress($recipient["email"], $recipient["name"]);	//Adds a "To" address
-			$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
-			$mail->IsHTML(true);							//Sets message type to HTML
-			$mail->Subject = $subject; //Sets the Subject of the message
-			//An HTML or plain text message body
-			
-			// replacing the placeholders in the body
-			// name - [[NAME]]
-			$newBody = str_replace("[[NAME]]", $recipient["name"], $body);
-			// email - [[EMAIL]]
-			$newBody = str_replace("[[EMAIL]]", $recipient["email"], $newBody);
-			// telephone - [[TELEPHONE]]
-			// $body = str_replace("[[TELEPHONE]]", $recipient["telephone"], $body);
-
-			$mail->Body = $newBody;
-
-			$mail->AltBody = '';
-
-			$result = $mail->Send();						//Send an Email. Return true on success or false on error
-
-			// if error in sending mail
-			if ($result["code"] == '400')
-			{
-				$output .= html_entity_decode($result['full_error']);
-			} else {
-				// increment the no of successful mail sent
-				$noMailSent++;
-			}
+		
+		$mail = new PHPMailer;
+		$mail->CharSet = "UTF-8";
+		$mail->Encoding = "base64";
+		$mail->IsSMTP();
+		$mail->Host = 'mail.miratechnologies.com.ng';
+		$mail->Port = 465;
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = 'ssl';
+		$mail->Username = 'bulkmailer@miratechnologies.com.ng';
+		$mail->Password = '8WcH*IOT62uK';
+		$mail->From = 'bulkmailer@miratechnologies.com.ng';
+		$mail->FromName = $sender;
+		// $mail->AddAddress("bulkmailer@miratechnologies.com.ng", "Mira Technologies");
+		foreach($recipients as $recipient) {
+			$mail->addBCC($recipient["email"], $recipient["name"]);
 
 			// appending the emails with comma
 			$recipientEmail[] = $recipient["email"];
+
+			$noMailSent++;
+		}
+		$mail->addReplyTo('bulkmailer@miratechnologies.com.ng', 'Mira Technologies');
+		$mail->WordWrap = 50;
+		$mail->IsHTML(true);
+		$mail->Subject = $subject;
+		// clean the body codes
+		$body = str_replace("class=\"bulkmailer\"", "", $body);
+		$body = str_replace("class=\"_txt\"", "", $body);
+		$body = str_replace("class=\"_imglink\"", "", $body);
+		$body = str_replace("class=\"_img\"", "", $body);
+		$body = str_replace("class=\"default _add_block _row\"", "", $body);
+		$body = str_replace("class=\"_txtblock\"", "", $body);
+		$body = str_replace("class=\"_content\"", "", $body);
+		$body = str_replace("class=\"_button\"", "", $body);
+		$body = str_replace("class=\"_divider\"", "", $body);
+		$body = str_replace("class=\"_spacer\"", "", $body);
+		$body = str_replace("class=\"_table\"", "", $body);
+		$body = str_replace("class=\"_add_content\"", "", $body);
+		$mail->Body = $body;
+		$mail->AltBody = '';
+		$result = $mail->Send();
+
+		// if error in sending mail
+		if ($result["code"] == '400')
+		{
+			$output .= html_entity_decode($result['full_error']);
 		}
 
 		$mailType = "";
