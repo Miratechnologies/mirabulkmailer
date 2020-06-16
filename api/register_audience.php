@@ -36,11 +36,11 @@ if ($validation->validateEmail($email,10,50) == false) {
    $email = $validation->sanitize($email);
 }
 
-if ($validation->validateTelephone($telephone,10,20) == false) {
-   $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Telephone.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Telephone."]));
-} else {
+// if ($validation->validateTelephone($telephone,10,20) == false) {
+//    $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Telephone.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Telephone."]));
+// } else {
    $telephone = $validation->sanitize($telephone);
-}
+// }
 
 if ($classification != "CUSTOMER" && $classification != "SUBSCRIBER") {
    $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Classification.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Classification."]));
