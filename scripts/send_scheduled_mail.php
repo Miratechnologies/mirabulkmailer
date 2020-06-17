@@ -115,11 +115,11 @@ class scheduler
 		$mail->Port = 465;
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
-		$mail->Username = 'bulkmailer@miratechnologies.com.ng';
+		$mail->Username = 'info@miratechnologies.com.ng';
 		$mail->Password = '8WcH*IOT62uK';
-		$mail->From = 'bulkmailer@miratechnologies.com.ng';
+		$mail->From = 'info@miratechnologies.com.ng';
 		$mail->FromName = $sender;
-		// $mail->AddAddress("bulkmailer@miratechnologies.com.ng", "Mira Technologies");
+		// $mail->AddAddress("info@miratechnologies.com.ng", "Mira Technologies");
 		foreach($recipients as $recipient) {
 			$mail->addBCC($recipient["email"], $recipient["name"]);
 
@@ -128,7 +128,7 @@ class scheduler
 
 			$noMailSent++;
 		}
-		$mail->addReplyTo('bulkmailer@miratechnologies.com.ng', 'Mira Technologies');
+		$mail->addReplyTo('info@miratechnologies.com.ng', 'Mira Technologies');
 		$mail->WordWrap = 50;
 		$mail->IsHTML(true);
 		$mail->Subject = $subject;

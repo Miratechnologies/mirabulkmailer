@@ -61,7 +61,7 @@ function readExcelData($excelFile){
       // verify that email exist
       
       // an optional sender
-      $sender = 'bulkmailer@miratechnologies.com.ng';
+      $sender = 'info@miratechnologies.com.ng';
       // instantiate the class
       $SMTP_Validator = new SMTP_validateEmail();
       // turn on debugging if you want to view the SMTP transaction
