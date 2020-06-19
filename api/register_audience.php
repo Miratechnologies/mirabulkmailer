@@ -24,11 +24,11 @@ if($validation->validateName($firstname,1,20) == false) {
    $firstname = $validation->sanitize($firstname);
 }
 
-if ($validation->validateName($lastname,1,20) == false) {
-   $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Lastname.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Lastname."]));
-} else {
+// if ($validation->validateName($lastname,1,20) == false) {
+//    $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Lastname.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Lastname."]));
+// } else {
    $lastname = $validation->sanitize($lastname);
-}
+// }
 
 if ($validation->validateEmail($email,10,50) == false) {
    $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Email.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Email."]));
@@ -52,7 +52,7 @@ if ($classification != "CUSTOMER" && $classification != "SUBSCRIBER") {
 // include SMTP Email Validation Class
 include_once '../vendor/php-smtp-email-validation/trunk/smtp_validateEmail.class.php';
 
-// // Verify that email exist
+// Verify that email exist
 // // an optional sender
 // $sender = 'info@miratechnologies.com.ng';
 // // instantiate the class
