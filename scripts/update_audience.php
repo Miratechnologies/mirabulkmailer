@@ -4,12 +4,16 @@
 
    // Get Inputs
    $id = $inputs['id'];
-   $body = $inputs['body'];
+   $firstname = $inputs['firstname'];
+   $lastname = $inputs['lastname'];
+   $email = $inputs['email'];
+   $telephone = $inputs['telephone'];
+   $status = $inputs['status'];
 
    include 'dbmodel.php';
    $model = new DBModel();
    // add the template to the draft
-   $add = $model->updateDraft(htmlentities($body), $id);
+   $add = $model->updateAudience($id,$firstname,$lastname,$email, $telephone, $status);
 
    if ($add === true) {
       exit(json_encode([

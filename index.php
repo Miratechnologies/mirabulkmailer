@@ -117,7 +117,7 @@ function get_client_ip() {
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Welcome | BulkMailing</title>
 
-   <link rel="shortcut icon" href="assets/imgs/miraicon.png" type="image/x-icon"><!-- Jquery -->
+   <link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/x-icon"><!-- Jquery -->
    <script src="assets/js/jquery.min.js"></script>
    <!-- Popper -->
    <script src="assets/js/popper.min.js"></script>

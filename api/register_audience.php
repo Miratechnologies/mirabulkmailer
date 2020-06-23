@@ -30,11 +30,21 @@ if($validation->validateName($firstname,1,20) == false) {
    $lastname = $validation->sanitize($lastname);
 // }
 
-if ($validation->validateEmail($email,10,50) == false) {
-   $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Email.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Email."]));
-} else {
-   $email = $validation->sanitize($email);
+$emails = explode(",",$email);
+$sanitizedEmails = [];
+
+foreach ($emails as $email) {
+
+   if ($validation->validateEmail($email,10,50) == false) {
+      $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Email.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Email."]));
+   } else {
+      $sanitizedEmails[] = $validation->sanitize($email);
+   }
+
 }
+
+$email = implode(",", $sanitizedEmails);
+
 
 // if ($validation->validateTelephone($telephone,10,20) == false) {
 //    $request == "Application" ? exit(header("location: ../audience.php?errmsg=Invalid Telephone.")) : die(json_encode(["flag"=>false,"msg"=>"Invalid Telephone."]));
@@ -69,7 +79,7 @@ include_once '../vendor/php-smtp-email-validation/trunk/smtp_validateEmail.class
    
    $model = new DBModel();
    // if user email or telephone don't exist
-   if ($model->checkAudienceExist($email, $telephone) == false) {
+   if ($model->checkAudienceExist($email) == false) {
       $add = $model->addAudience($firstname, $lastname, $email, $telephone, $classification, "SUBSCRIBED");
       // and send confirmation mail
       if ($add == true) {

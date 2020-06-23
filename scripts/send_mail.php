@@ -57,12 +57,17 @@ if (isset($_GET['action']) && $_GET['action'] == "send") {
 			$mail->FromName = $sender;
 			// $mail->AddAddress("info@miratechnologies.com.ng", "Mira Technologies");
 			foreach($recipients as $recipient) {
-				$mail->addBCC($recipient["email"], $recipient["name"]);
+				
+				// break emails
+				$emails = explode(",",$recipient["email"]);
+				foreach ($emails as $email) {
+					$mail->addBCC($email, $recipient["name"]);
 
-				// appending the emails with comma
-				$recipientEmail[] = $recipient["email"];
+					// appending the emails with comma
+					$recipientEmail[] = $email;
 
-				$noMailSent++;
+					$noMailSent++;
+				}
 			}
 			$mail->addReplyTo('info@miratechnologies.com.ng', 'Mira Technologies');
 			$mail->WordWrap = 50;
@@ -74,6 +79,7 @@ if (isset($_GET['action']) && $_GET['action'] == "send") {
 			$body = str_replace("class=\"_imglink\"", "", $body);
 			$body = str_replace("class=\"_img\"", "", $body);
 			$body = str_replace("class=\"default _add_block _row\"", "", $body);
+			$body = str_replace("class=\"_add_block _row\"", "", $body);
 			$body = str_replace("class=\"_txtblock\"", "", $body);
 			$body = str_replace("class=\"_content\"", "", $body);
 			$body = str_replace("class=\"_button\"", "", $body);
