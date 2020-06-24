@@ -55,7 +55,7 @@ if (isset($_GET['action']) && $_GET['action'] == "send") {
 			$mail->Password = '8WcH*IOT62uK';
 			$mail->From = 'info@miratechnologies.com.ng';
 			$mail->FromName = $sender;
-			// $mail->AddAddress("info@miratechnologies.com.ng", "Mira Technologies");
+			$mail->AddAddress("info@miratechnologies.com.ng", "Mira Technologies");
 			foreach($recipients as $recipient) {
 				
 				// break emails

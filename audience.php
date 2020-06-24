@@ -101,10 +101,11 @@ if ($audiences['flag'] == true) {
 
 						<button type="submit" class="btn btn-sm obejor-bg-dark text-light my-2 float-right"><span class="fa fa-plus"></span> Add Audience</button>
 					</form>
-				
+
 					<div class="clearfix"></div>
 				</div>
-				
+				<div class="table-responsive">
+
 				<?php 
 					if (isset($_GET['succmsg'])) {
 						echo "

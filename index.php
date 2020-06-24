@@ -59,6 +59,8 @@ if (isset($inputs['auth'])) {
 				include 'scripts/log.php';
 			}
 
+			// regenerate session
+			session_regenerate_id();
 			// redirect to the dashboard
 			exit(header('location: dashboard.php'));
 		} else {

@@ -136,11 +136,4 @@ class Validation
     }
 }
 
-// $html = <<<HTML
-// <div class="default _add_block _row" style="background-color:transparent">
-// <div style="Margin:0 auto;min-width:320px;max-width:800px;word-wrap:break-word;word-break:break-word;">
-// HTML;
-
-// echo htmlentities($html);
-
 ?>
